@@ -1,0 +1,4 @@
+Employee Name,Email,Phone,Report To,Assigned Policies
+Boby,boby@example.com,081231231,,Sick Leave|Annual Leave
+jik,hh@example.com,0123j123,,Sick Leave|Annual Leave
+Arya,arya@example.com,0123123,bob@example.com,Sick Leave|Annual Leave|Maternity Leave

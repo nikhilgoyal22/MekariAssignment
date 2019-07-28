@@ -54,7 +54,7 @@ RSpec.describe PoliciesController, :type => :controller do
 
   describe "GET new" do
     it "assigns a new policy as @policy" do
-      get :new, {}, valid_session
+      get :new, valid_session
       expect(assigns(:policy)).to be_a_new(Policy)
     end
   end

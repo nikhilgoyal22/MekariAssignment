@@ -1,3 +1,16 @@
+Following are the instruction was installation and testing.
+
+### Install:
+ - `cd {folder}/`
+ - `bundle install`
+
+### Run:
+ - `rails db:create db:migrate db:seed`
+ - `rails s`
+ - open `localhost:3000`
+
+Let me know if any issues
+
 # Intro
 This is a very basic app that holds a collection of companies data including its employee and leaves policy information. In this task, you will be required to develop new features according to the following user story.
 

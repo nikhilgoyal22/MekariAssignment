@@ -54,7 +54,7 @@ RSpec.describe CompaniesController, :type => :controller do
 
   describe "GET new" do
     it "assigns a new company as @company" do
-      get :new, {}, valid_session
+      get :new, valid_session
       expect(assigns(:company)).to be_a_new(Company)
     end
   end

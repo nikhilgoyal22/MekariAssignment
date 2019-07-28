@@ -54,7 +54,7 @@ RSpec.describe EmployeesController, :type => :controller do
 
   describe "GET new" do
     it "assigns a new employee as @employee" do
-      get :new, {}, valid_session
+      get :new, valid_session
       expect(assigns(:employee)).to be_a_new(Employee)
     end
   end

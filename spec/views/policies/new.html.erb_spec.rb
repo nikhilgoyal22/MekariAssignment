@@ -2,9 +2,10 @@ require 'rails_helper'
 
 RSpec.describe "policies/new", :type => :view do
   before(:each) do
+    @company = Company.create!(name: 'Test Company')
     assign(:policy, Policy.new(
       :name => "MyString",
-      :company => nil
+      :company => @company
     ))
   end
 
