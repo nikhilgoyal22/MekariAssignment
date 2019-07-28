@@ -1,0 +1,60 @@
+<% if notice %>
+  <p id="notice"><%= notice %></p>
+<% end %>
+
+<h3>Employee File Upload</h3>
+
+<%= form_with(url: upload_employees_path, local: true) do |form| %>
+  <% if @errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@errors.keys.count, "error") %> prohibited this file from being uploaded:</h2>
+
+      <ul>
+        <% @errors.sort.each do |key, message| %>
+          <li><%= key.to_s.humanize %>: <%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label 'Company:' %>
+    <%= form.select 'company', options_for_select(Company.all.map { |company| [company.name, company.id] }), { prompt: "Select Company", class: 'form-control', required: true } %>
+  </div>
+  <br>
+  <div>
+    <%= form.label 'Upload CSV:' %>
+    <%= form.file_field 'file'%>
+  </div>
+  <br>
+  <div><%= form.submit 'Upload' %></div>
+<% end -%>
+
+<br>
+
+<% unless @employees.blank? %>
+  <h3>Employees for recently uploaded file</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Manager</th>
+        <th>Company</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @employees.each do |employee| %>
+        <tr>
+          <td><%= employee.name %></td>
+          <td><%= employee.email %></td>
+          <td><%= employee.phone %></td>
+          <td><%= employee.parent&.email %></td>
+          <td><%= employee.company&.name %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

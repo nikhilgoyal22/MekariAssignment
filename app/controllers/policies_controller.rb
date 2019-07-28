@@ -62,13 +62,13 @@ class PoliciesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_policy
-      @policy = Policy.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_policy
+    @policy = Policy.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def policy_params
-      params.require(:policy).permit(:name, :company_id)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def policy_params
+    params.require(:policy).permit(:name, :company_id)
+  end
 end
